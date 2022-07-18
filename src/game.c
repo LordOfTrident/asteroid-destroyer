@@ -41,10 +41,8 @@ void game_init(game_t *p_game) {
 	} else
 		SDL_Log("Created the screen texture");
 
-	p_game->screen_rect = (SDL_Rect){
-		.x = 0, .y = 0,
-		.w = SCREEN_W, .h = SCREEN_H
-	};
+	p_game->screen_rect.w = SCREEN_W;
+	p_game->screen_rect.h = SCREEN_H;
 
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "nearest");
 	if (SDL_RenderSetLogicalSize(p_game->renderer, SCREEN_W, SCREEN_H) != 0) {
@@ -151,6 +149,9 @@ void game_finish(game_t *p_game) {
 	}
 
 	label_free(&p_game->label);
+
+	SDL_DestroyTexture(p_game->screen);
+	SDL_Log("Destroyed the screen");
 
 	SDL_Log("Destroyed textures");
 
