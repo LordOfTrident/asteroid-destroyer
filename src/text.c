@@ -57,17 +57,17 @@ text_texture_t *label_get_texture(label_t *p_label, SDL_Renderer *p_renderer, co
 		i = p_label->textures_count;
 		++ p_label->textures_count;
 
-		size_t text_len = strlen(p_text);
-
-		p_label->textures[i].text = malloc(text_len + 1);
-		strcpy(p_label->textures[i].text, p_text);
-
 		if (p_label->textures_count >= TEXTURES_CACHE_LIMIT) {
 			label_free(p_label);
 
 			i = 0;
 			p_label->textures_count = 1;
 		}
+
+		size_t text_len = strlen(p_text);
+
+		p_label->textures[i].text = malloc(text_len + 1);
+		strcpy(p_label->textures[i].text, p_text);
 
 		SDL_Surface *surface = SDL_CreateRGBSurface(0, text_len * p_label->font->ch_w,
 		                                            p_label->font->ch_h, 32, 0, 0, 0, 0);

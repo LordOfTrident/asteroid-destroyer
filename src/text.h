@@ -9,7 +9,7 @@
 #include <stdbool.h> /* bool, true, false */
 #include <SDL2/SDL.h>
 
-#define TEXTURES_CACHE_LIMIT 128
+#define TEXTURES_CACHE_LIMIT 256
 
 typedef struct {
 	size_t row_len;
