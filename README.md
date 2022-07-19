@@ -33,4 +33,4 @@ If you find any bugs, please create an issue and report them.
 - [SDL2](https://www.libsdl.org/)
 
 ## Make
-Run `make all` to see all the make rules, `make` to compile a static binary.
+Run `make all` to see all the make rules, `make` to compile a binary.
