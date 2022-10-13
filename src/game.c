@@ -60,14 +60,13 @@ void game_init(game_t *p_game) {
 	p_game->map.w = SCREEN_W - 2;
 	p_game->map.h = SCREEN_H - 2;
 
-	time_t random = rand();
-	srand(time(&random));
+	srand(time(NULL));
 
 	/* init assets */
-	game_load_asset(p_game, "./res/sprites.bmp",     "sprites");
-	game_load_asset(p_game, "./res/font.bmp",        "font");
-	game_load_asset(p_game, "./res/font_small.bmp",  "font_small");
-	game_load_asset(p_game, "./res/font_big.bmp",    "font_big");
+	game_load_asset(p_game, "./res/sprites.bmp",    "sprites");
+	game_load_asset(p_game, "./res/font.bmp",       "font");
+	game_load_asset(p_game, "./res/font_small.bmp", "font_small");
+	game_load_asset(p_game, "./res/font_big.bmp",   "font_big");
 
 	SDL_Rect player_rect = {
 		.x = 0, .y = 0,
